@@ -1,0 +1,24 @@
+{{ define "title" }}
+  {{- $title := printf "%s - %s" .Parent.Title .Title -}}
+  {{.Scratch.Set "title" $title}}
+{{ end }}
+
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+
+  <span>
+    {{ partial "date.html" . }}
+  </span>
+
+  {{- .Content -}}
+
+  {{- $dir := path.Clean .File.Dir -}}
+  {{- $category := index (split $dir "/") 1 -}}
+  {{- $taxonomy := printf "%s/tags" $category -}}
+
+  <div class="tags">
+    {{- range (.GetTerms $taxonomy) -}}
+    <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>&nbsp;
+    {{- end -}}
+  </div>
+{{ end }}

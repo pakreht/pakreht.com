@@ -1,0 +1,21 @@
+{{ define "title" }}
+  {{- $title := printf "%s - %s" .Site.Title .Title -}}
+  {{.Scratch.Set "title" $title}}
+{{ end }}
+
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  
+  {{ partial "posts.html" . }}
+
+  {{- $dir := path.Clean .File.Dir -}}
+  {{- $category := index (split $dir "/") 1 -}}
+  {{- $taxonomy := printf "%s/tags" $category -}}
+  <div class="tags">
+    <small>
+      {{- range $term, $weightedPage := (index .Site.Taxonomies $taxonomy) -}}
+      <a href="{{ $weightedPage.Page.RelPermalink }}">#{{ $weightedPage.Page.Title }}</a>&nbsp;
+      {{- end -}}
+    </small>
+  </div>
+{{ end }}

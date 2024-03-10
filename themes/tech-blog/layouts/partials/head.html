@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>
+  {{ .Scratch.Get "title" }}
+</title>
+
+{{- with .Site.Params.favicon -}}
+  <link rel="shortcut icon" href="{{ . | relURL }}" />
+{{- end }}
+
+{{- $description := or .Description (and .IsPage .Summary) .Site.Params.description "" -}}
+<meta name="description" content="{{ $description }}" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+{{ $noindexKinds := slice "term" "404" }}
+{{ $isIndexed := not (in $noindexKinds .Kind) }}
+{{- if not $isIndexed -}}
+  <meta name="robots" content="noindex" />
+{{- else -}}
+  <link rel="canonical" href="{{ .Permalink }}" />
+{{- end -}}
+
+{{- template "_internal/opengraph.html" . -}}
+{{- template "_internal/twitter_cards.html" . -}}
+{{- template "_internal/schema.html" . -}}
+
+{{- template "_internal/google_analytics.html" . -}}
+{{- template "_internal/google_analytics_async.html" . -}}
+
+{{- /*  RSS Feed  */ -}}
+{{- with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{- end -}}
+
+{{- partialCached "css.html" . -}}

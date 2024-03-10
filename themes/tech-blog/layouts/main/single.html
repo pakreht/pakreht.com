@@ -1,0 +1,9 @@
+{{ define "title" }}
+  {{- $title := printf "%s - %s" .Site.Title .Title -}}
+  {{.Scratch.Set "title" $title}}
+{{ end }}
+
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+{{ end }}

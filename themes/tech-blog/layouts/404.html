@@ -1,0 +1,9 @@
+{{ define "title" }}
+  {{- $title := printf "%s - 404" .Site.Title -}}
+  {{.Scratch.Set "title" $title}}
+{{ end }}
+
+{{ define "main" }}
+    <h1>Page not found (404)</h1>
+    <p>That page isn't on the site</p>
+{{ end }}

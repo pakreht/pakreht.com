@@ -1,0 +1,48 @@
+baseURL: 'https://pakreht.com/'
+title: Pakreht
+theme: tech-blog
+languageCode: en-us
+copyright: 2024 pakreht.com All rights reserved
+
+enableRobotsTXT: true
+
+taxonomies:
+  houdini_tag: 'houdini/tags'
+  unreal-engine_tag: 'unreal-engine/tags'
+  substance-designer_tag: 'substance-designer/tags'
+  essay_tag: 'essay/tags'
+
+disableKinds: ['taxonomy']
+ignoreErrors: ['error-disable-taxonomy']
+
+outputs:
+  home: ['html', 'rss']
+  page: ['html']
+  section: ['html']
+  term: ['html']
+
+permalinks:
+  page:
+    main: '/:slug/'
+    post: '/:sections[last]/:slug/'
+  section:
+    post: '/:slug/'
+
+services:
+  googleAnalytics:
+    ID: G-LKKZ5CC9BC
+
+module:
+  hugoVersion:
+    extended: false
+    min: '0.116.0'
+
+params:
+  description: Site description to be used for SEO if no description is set.
+  favicon: images/favicon.png
+  author:
+    name: 'Pakreht'
+  social:
+    twitter: pakreht_
+    instagram: pakreht
+    artstation: pakreht

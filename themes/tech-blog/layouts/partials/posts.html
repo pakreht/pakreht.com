@@ -1,0 +1,14 @@
+<ul class="posts">
+{{- range .Pages -}}
+    <li>
+        <span>
+            {{ partial "date.html" . }}
+        </span>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{- else -}}
+    <li>
+        No posts yet
+    </li>
+{{- end -}}
+</ul>
