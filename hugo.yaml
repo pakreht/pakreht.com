@@ -38,7 +38,7 @@ module:
     min: '0.116.0'
 
 params:
-  description: Site description to be used for SEO if no description is set.
+  description: Personnal blog where i talk about various Tech Art subjects such as Houdini, vex, python, substance designer, unreal engine, algorithms, shader, and more..
   favicon: images/favicon.png
   author:
     name: 'Pakreht'
