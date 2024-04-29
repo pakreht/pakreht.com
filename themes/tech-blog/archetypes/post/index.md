@@ -7,6 +7,7 @@
     {{- $terms = $terms | append $k -}}
 {{- end -}}
 ---
+draft: true
 title: {{ $title }}
 category: {{ $category }}
 date: {{ now.Format "2006-01-02" }}

@@ -4,7 +4,8 @@
 {{ end }}
 
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  {{- $title := printf "%s - %s" .Parent.Title .Title -}}
+  <h1>{{ $title }}</h1>
 
   <span>
     {{ partial "date.html" . }}
