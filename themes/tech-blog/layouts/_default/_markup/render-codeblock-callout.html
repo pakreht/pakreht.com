@@ -1,0 +1,7 @@
+{{ $type := .Attributes.type  }}
+<div class="callout callout-{{- $type -}}">
+  <h3>{{ $type | title }}</h3>
+  <p>
+    {{ .Inner | .Page.RenderString }}
+  </p>
+</div>

@@ -1,4 +1,4 @@
 ---
 title: Substance Designer
-weight: 20
+weight: 30
 ---

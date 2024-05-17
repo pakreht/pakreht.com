@@ -10,6 +10,7 @@ taxonomies:
   houdini_tag: 'houdini/tags'
   unreal-engine_tag: 'unreal-engine/tags'
   substance-designer_tag: 'substance-designer/tags'
+  work_tag: 'work/tags'
   essay_tag: 'essay/tags'
 
 disableKinds: ['taxonomy']
@@ -36,6 +37,14 @@ module:
   hugoVersion:
     extended: false
     min: '0.116.0'
+
+# Necessary for Image render hooks
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+      wrapStandAloneImageWithinParagraph: false
 
 params:
   description: Personnal blog where i talk about various Tech Art subjects such as Houdini, vex, python, substance designer, unreal engine, algorithms, shader, and more..

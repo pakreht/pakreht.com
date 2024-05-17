@@ -1,0 +1,20 @@
+<div class="img-post">
+    {{- $imgID := md5 .Destination -}}
+    <input type="checkbox" id={{ $imgID }}>
+
+    <label for={{ $imgID }} class="img-post-small">
+        <img src="{{ .Destination | safeURL }}"
+        {{- with .Text }} alt="{{ . }}"{{ end -}}
+        {{- with .Title }} title="{{ . }}"{{ end -}}
+        >
+    </label>
+
+    <label for={{ $imgID }} class="img-post-large">
+        <div>
+            <img src="{{ .Destination | safeURL }}"
+            {{- with .Text }} alt="{{ . }}"{{ end -}}
+            {{- with .Title }} title="{{ . }}"{{ end -}}
+            >
+        </div>
+    </label>
+</div>

@@ -7,6 +7,15 @@
   --color-main: #9625ff;
   --color-selected-text: #fff;
   --color-mid-grey: #999;
+
+  --color-callout-info: #629cdf;
+  --color-callout-tip: #27c7c4;
+  --color-callout-question: #3db36e;
+  --color-callout-example: #9379e0;
+  --color-callout-warning: #eb7d17;
+  --color-callout-bug: #e23140;
+
+  
 }
 
 /* Light mode colors */
@@ -104,6 +113,12 @@ a:hover {
   text-decoration: none;
 }
 
+sup a{
+  border-bottom: none;
+  color: var(--color-main);
+  font-weight: bold;
+}
+
 header {
   margin-bottom: 40px;
   padding-bottom: 20px;
@@ -132,8 +147,15 @@ hr {
   border-top: 1px dashed;
 }
 
-img {
-  max-width: 100%;
+.highlight{
+  margin: 8px 0px;
+  border: 5px solid var(--color-code-background);
+  border-radius: 3px;
+
+  pre{
+    margin: 0px;
+    padding: 8px 5px;
+  }
 }
 
 code:not(code[data-lang]) {
@@ -143,7 +165,6 @@ code:not(code[data-lang]) {
   background-color: var(--color-code-background);
   color: var(--color-code);
 }
-
 
 blockquote {
   border-left: 1px solid var(--color-mid-grey);
@@ -170,7 +191,6 @@ footer {
 .inline {
   width: auto!important;
 }
-
 
 ul.posts {
   list-style-type: none;
@@ -213,4 +233,130 @@ th,td {
 div.term-filter {
   margin-top: -20px;
   margin-bottom: 20px;
+}
+
+/* Image in Posts */
+div.img-post{
+  label.img-post-small img{
+    margin: 8px 0px;
+    border: 5px solid var(--color-code-background);
+    border-radius: 3px;
+    max-width: 99%;
+    cursor: zoom-in;
+  }
+
+  label.img-post-large div{
+    cursor: zoom-out;
+
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(2px);
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+
+  label.img-post-large div img{
+    height: 90%;
+    width: 90%;
+    object-fit: contain;
+  }
+
+  input[type=checkbox]{
+    display: none;
+  }
+
+  input[type=checkbox]:checked ~ label.img-post-large div{
+    display: flex;
+  }
+}
+
+/* Callouts Types */
+div.callout {
+  padding: 12px 20px;
+  margin: 8px 0px;
+  border: 1px solid;
+  border-left-width: 5px;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.12);
+
+  h3 {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  svg {
+    color: rgba(0,0,0,0);
+    padding-right: 10px;
+  }
+}
+
+/* Use SCSS loop latter */
+div.callout-info {
+ border-color: var(--color-callout-info);
+ h3 {
+    color: var(--color-callout-info);
+  }
+  svg {
+    stroke : var(--color-callout-info);
+  }
+}
+
+div.callout-tip {
+  border-color: var(--color-callout-tip);
+  h3 {
+    color: var(--color-callout-tip);
+  }
+  svg {
+    stroke : var(--color-callout-tip);
+  }
+}
+
+div.callout-question {
+  border-color: var(--color-callout-question);
+  h3 {
+    color: var(--color-callout-question);
+  }
+  svg {
+    stroke : var(--color-callout-question);
+  }
+}
+
+div.callout-example {
+  border-color: var(--color-callout-example);
+  h3 {
+    color: var(--color-callout-example);
+  }
+  svg {
+    stroke : var(--color-callout-example);
+  }
+}
+
+div.callout-warning {
+  border-color: var(--color-callout-warning);
+  h3 {
+    color: var(--color-callout-warning);
+  }
+  svg {
+    stroke : var(--color-callout-warning);
+  }
+}
+
+div.callout-bug {
+  border-color: var(--color-callout-bug);
+  h3 {
+    color: var(--color-callout-bug);
+  }
+  svg {
+    stroke : var(--color-callout-bug);
+  }
 }

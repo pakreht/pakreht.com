@@ -1,0 +1,13 @@
+{{ $type := .Attributes.type  }}
+<div class="callout callout-{{- $type -}}">
+  <div class="callout-title">
+    {{ $svgPath := printf "svg/callout-%s.svg" $type }}
+    {{ with resources.Get $svgPath }}
+      {{ .Content | safeHTML }}
+    {{ end }}
+    <h3>{{ $type | title }}</h3>
+  </div>
+  <p>
+    {{ .Inner | .Page.RenderString }}
+  </p>
+</div>
