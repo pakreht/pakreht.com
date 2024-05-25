@@ -1,0 +1,7 @@
+{{ with (.Get 0) }}
+    {{ range seq . }}
+    <br>
+    {{ end }}
+{{ else }}
+<br>
+{{ end }}

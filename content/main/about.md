@@ -20,7 +20,7 @@ That tendency mixed with my apprehension of forgetting have lead me to take exte
 
 > What a selfish person would i be to keep all this knowledge for myself, have i thought 
 
-Thus Pakreht.com was born •ᴗ•
+Thus **Pakreht.com** was born •ᴗ•
 
 ### An indie game ?
 

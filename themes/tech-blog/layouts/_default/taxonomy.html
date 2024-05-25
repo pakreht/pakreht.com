@@ -10,7 +10,7 @@
   {{- $category := index (split .Data.Plural "/") 0 -}}
   {{- $categoryPath := printf "post/%s" $category -}}
   {{- $categoryPage := .Site.GetPage $categoryPath -}}
-  <h1>{{ $categoryPage.Title }}</h1>
+  <h1 class="page-heading">{{ $categoryPage.Title }}</h1>
   <div class="term-filter">
     With tag <code>#{{ .Title }}</code>
     <a href="{{ $categoryPage.RelPermalink }}">✖</a>

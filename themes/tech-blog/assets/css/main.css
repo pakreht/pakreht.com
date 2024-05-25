@@ -4,11 +4,12 @@
   --font-secondary: 'Roboto Mono', monospace;
   --font-scale: .9em;
   
-  --color-main: #9625ff;
+  --color-main: rgb(186, 135, 233);
   --color-selected-text: #fff;
   --color-mid-grey: #999;
 
   --color-callout-info: #629cdf;
+  --color-callout-important: #d3508d;
   --color-callout-tip: #27c7c4;
   --color-callout-question: #3db36e;
   --color-callout-example: #9379e0;
@@ -24,11 +25,10 @@
     --color-heading: #232333;
     --color-background: #fafafa;
     --color-text: #232333;
-    --color-visited: #232333;
     --color-link: #232333;
     --color-big-border: #232333;
   
-    --color-code-background: #e4e4e4;
+    --color-code-background: #d4d4d4;
     --color-code: #161616;
     --color-blockquote: #222;
   }
@@ -37,10 +37,9 @@
 /* Dark mode colors */
 @media(prefers-color-scheme: dark) {
   :root{
-    --color-heading: #fff;
+    --color-heading: #f7f0ff;
     --color-background: #333;
     --color-text: #ddd;
-    --color-visited: #ddd;
     --color-link: #ddd;
     --color-big-border: #888;
   
@@ -84,7 +83,7 @@ body {
   font-family: var(--font-secondary);
   font-size: var(--font-scale);
   margin: auto;
-  padding: 20px;
+  padding: 30px;
   max-width: var(--width);
   text-align: left;
   background-color: var(--color-background);
@@ -94,23 +93,72 @@ body {
   color: var(--color-text);
 }
 
+/* Heading */
+
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--font-main);
   color: var(--color-heading);
 }
 
+h1 {
+  font-size: 2.5em;
+  margin-top: 5em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 4em;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 3em;
+}
+
+h4 {
+  font-size: 1.2em;
+  margin-top: 2.4em;
+}
+
+h5 {
+  font-size: 1em;
+  margin-top: 2em;
+}
+
+h6 {
+  font-size: .8em;
+  margin-top: 1.6em;
+}
+
+.post-heading {
+  margin-left: -15px;
+}
+
+.site-heading {
+  margin-top: unset;
+  text-decoration: none;
+}
+
+.page-heading {
+  margin-top: unset;
+}
+
+
+
 a {
   color: var(--color-link);
   font-family: var(--font-main);
   cursor: pointer;
-  text-decoration: none;
-  border-bottom: 1px solid var(--color-main);
+  text-decoration: underline;
+  text-decoration-color: var(--color-main);
+  color: var(--color-main);
 }
 
 a:hover {
   background-color: var(--color-main);
   color: var(--color-selected-text);
   text-decoration: none;
+  border-radius: 2px;
 }
 
 sup a{
@@ -148,7 +196,8 @@ hr {
 }
 
 .highlight{
-  margin: 8px 0px;
+  /* margin: 8px 0px; */
+  margin: 14px 0px;
   border: 5px solid var(--color-code-background);
   border-radius: 3px;
 
@@ -180,13 +229,7 @@ footer {
   text-align: center;
 }
 
-.title:hover {
-  text-decoration: none;
-}
 
-.title h1 {
-  font-size: 1.5em;
-}
 
 .inline {
   width: auto!important;
@@ -211,10 +254,6 @@ ul.posts li span {
   flex: 0 0 130px;
 }
 
-ul.posts li a:visited {
-  color: var(--color-visited);
-}
-
 div.tags {
   margin-top: 2em;
 }
@@ -235,10 +274,15 @@ div.term-filter {
   margin-bottom: 20px;
 }
 
+div.footnotes {
+  margin-top: 120px;
+}
+
+
 /* Image in Posts */
 div.img-post{
   label.img-post-small img{
-    margin: 8px 0px;
+    margin: 14px 0px;
     border: 5px solid var(--color-code-background);
     border-radius: 3px;
     max-width: 99%;
@@ -279,19 +323,21 @@ div.img-post{
 /* Callouts Types */
 div.callout {
   padding: 12px 20px;
-  margin: 8px 0px;
+  margin: 14px 25px 14px;
   border: 1px solid;
   border-left-width: 5px;
   border-radius: 3px;
-  background-color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.15);
 
-  h3 {
+
+  h1,h1,h3,h4,h5,h6 {
     margin: 0;
     margin-bottom: 5px;
   }
 
   p {
     margin: 0;
+    color: var(--color-blockquote);
   }
 
   svg {
@@ -303,7 +349,7 @@ div.callout {
 /* Use SCSS loop latter */
 div.callout-info {
  border-color: var(--color-callout-info);
- h3 {
+  h1,h1,h3,h4,h5,h6 {
     color: var(--color-callout-info);
   }
   svg {
@@ -311,9 +357,19 @@ div.callout-info {
   }
 }
 
+div.callout-important {
+  border-color: var(--color-callout-important);
+  h1,h1,h3,h4,h5,h6 {
+     color: var(--color-callout-important);
+   }
+   svg {
+     stroke : var(--color-callout-important);
+   }
+ }
+
 div.callout-tip {
   border-color: var(--color-callout-tip);
-  h3 {
+  h1,h1,h3,h4,h5,h6 {
     color: var(--color-callout-tip);
   }
   svg {
@@ -323,7 +379,7 @@ div.callout-tip {
 
 div.callout-question {
   border-color: var(--color-callout-question);
-  h3 {
+  h1,h1,h3,h4,h5,h6 {
     color: var(--color-callout-question);
   }
   svg {
@@ -333,7 +389,7 @@ div.callout-question {
 
 div.callout-example {
   border-color: var(--color-callout-example);
-  h3 {
+  h1,h1,h3,h4,h5,h6 {
     color: var(--color-callout-example);
   }
   svg {
@@ -343,7 +399,7 @@ div.callout-example {
 
 div.callout-warning {
   border-color: var(--color-callout-warning);
-  h3 {
+  h1,h1,h3,h4,h5,h6 {
     color: var(--color-callout-warning);
   }
   svg {
@@ -353,7 +409,7 @@ div.callout-warning {
 
 div.callout-bug {
   border-color: var(--color-callout-bug);
-  h3 {
+  h1,h1,h3,h4,h5,h6 {
     color: var(--color-callout-bug);
   }
   svg {

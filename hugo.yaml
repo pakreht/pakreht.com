@@ -38,16 +38,17 @@ module:
     extended: false
     min: '0.116.0'
 
-# Necessary for Image render hooks
+# Necessary for Image & Title render hooks
 markup:
   goldmark:
     parser:
       attribute:
         block: true
+        title: true
       wrapStandAloneImageWithinParagraph: false
 
 params:
-  description: Personnal blog where i talk about various Tech Art subjects such as Houdini, vex, python, substance designer, unreal engine, algorithms, shader, and more..
+  description: Personnal blog where i talk about various Tech Art subjects such as Houdini, vex, python, substance designer, unreal engine, algorithms, shader, environment, terrain, pipeline and more..
   favicon: images/favicon.png
   author:
     name: 'Pakreht'
