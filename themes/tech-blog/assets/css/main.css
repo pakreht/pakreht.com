@@ -4,7 +4,7 @@
   --font-secondary: 'Roboto Mono', monospace;
   --font-scale: .9em;
   
-  --color-main: rgb(186, 135, 233);
+  --color-main: #ba87e9;
   --color-selected-text: #fff;
   --color-mid-grey: #999;
 
@@ -15,8 +15,6 @@
   --color-callout-example: #9379e0;
   --color-callout-warning: #eb7d17;
   --color-callout-bug: #e23140;
-
-  
 }
 
 /* Light mode colors */
@@ -48,6 +46,20 @@
     --color-blockquote: #ccc;
   }
 }
+
+/* Temporarly force Dark Mode until correct way of switching */
+:root{
+  --color-heading: #f7f0ff;
+  --color-background: #333;
+  --color-text: #ddd;
+  --color-link: #ddd;
+  --color-big-border: #888;
+
+  --color-code-background: #444444;
+  --color-code: #ddd;
+  --color-blockquote: #ccc;
+}
+
 
 /* Desktop */
 @media (min-width: 800px) {
