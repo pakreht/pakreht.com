@@ -48,7 +48,10 @@ markup:
       wrapStandAloneImageWithinParagraph: false
 
 params:
+  title: Pakreht.com
   description: Personnal blog where i talk about various Tech Art subjects such as Houdini, vex, python, substance designer, unreal engine, algorithms, shader, environment, terrain, pipeline and more..
+  images:
+  - images/site-feature-image.png
   favicon: images/favicon.png
   author:
     name: 'Pakreht'

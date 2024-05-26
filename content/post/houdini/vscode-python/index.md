@@ -134,7 +134,7 @@ Don't hesitate to rerun this script anytime you modify your Houdini environment,
 
 {{< br >}}
 
-If you want to understand furthermore the VSCode settings we just set, you can check this [Python Settings Reference Documentation](https://code.visualstudio.com/docs/python/settings-reference) and `CTRL + F` the last part of each setting (`defaultInterpreterPath`, `extraPaths`, `stubPath`).
+If you want to understand furthermore the VSCode settings we just set, you can check this [VSCode Documentation on Python Settings](https://code.visualstudio.com/docs/python/settings-reference) and `CTRL + F` the last part of each setting (`defaultInterpreterPath`, `extraPaths`, `stubPath`).
 ## Stubs Generation
 
 Have you noticed this `python.analysis.stubPath` in your `settings.json`, this is the last thing we have to do so everything work. This should be set as the path to our **Stubs**, but what are theses exactly ?
@@ -142,9 +142,9 @@ Have you noticed this `python.analysis.stubPath` in your `settings.json`, this i
 **Stubs**[^src-stub] are `.pyi` files that give IntelliSense information about a certain module, they serve as an interface. Any module can have a matching "Stub Module" that will only contain typing information and be used by your code editor when you import the said module to help the autocompletion, function definitions, etc...
 [^src-stub]: [Doc - Pyright - Stub File](https://github.com/microsoft/pyright/blob/main/docs/type-stubs.md) (Pylance is based on Pyright)
 
-The `hou` module, is the main module we interact with when programming Python in Houdini. This module, while being packaged natively within Houdini, has incorrect typing information. Even if we have ``hou.py`` in our path, it will still not help the IntelliSense because the module itself does not have any Type info. This is why, we need to generate **Stubs Files** for that `hou` module, that way the editor will have the information it needs.
+The `hou` module, is the main module we interact with when programming Python in Houdini. This module, while being packaged natively within Houdini, has incorrect typing information. Even if we have ``hou.py`` in our path, it will still not help the IntelliSense because the module itself have wrong type info. This is why, we need to generate **Stubs Files** for that `hou` module, that way the editor will have the information it needs.
 
-The steps that will follow on Stub generation can be a bit tricky, so to avoid any unnecessary pain for some of you, I will give you a link to Stubs generated for Houdini 20, you will be able to use them, skipping the generation section. The main downside appears if your version of Houdini isn't the 20, in that case you might have some wrong definitions sometimes. Find that link at the end of this section ಠ‿<
+The steps that will follow on Stub generation can be a bit tricky, to avoid any unnecessary pain for some of you, I will give you a link to Stubs generated for Houdini 20, you will be able to use them, skipping the generation section. The main downside appears if your version of Houdini isn't the 20, in that case you might have some wrong definitions sometimes. Find that link at the end of this section ಠ‿<
 
 {{< br >}}
 
@@ -218,11 +218,11 @@ We are done with the hard work for now, one tiny step left, we will connect VSCo
 
 If you don't know where to find that VSCode Executable, in the window search bar, search for `Visual Studio Code`, `Right Click > Open File Location` you should be in front of a Shortcut of it so again `Right Click > Open File Location`, you should now be in front of a `Code.exe`, this is our VSCode Executable.
 
+You can now go in the Python Node we placed a while ago, in the **Code Box**, `Right Click > Expression > Edit in External Editor`. VSCode now open with the code you had in that Python Node, you can modify this code and whenever you save, this code will be pushed to the Python Node in Houdini and executed.
+
 ```callout { type="info" }
 In the past we had to use [Houdini Expression Editor](https://cgtoolbox.com/houdini-expression-editor/) by **CG Toolbox**, but now it is not needed anymore and Houdini have this feature built in.
 ```
-
-You can now go in the Python Node we placed a while ago, in the **Code Box**, `Right Click > Expression > Edit in External Editor`. VSCode now open with the code you had in that Python Node, you can modify this code and whenever you save, this code will be pushed to the Python Node in Houdini and executed.
 
 {{< br >}}
 
@@ -260,5 +260,9 @@ Don't hesitate to read furthermore on Typing in Python[^src-python-typing], it i
 {{< br 6 >}}
 
 I think we are done for today, this is my first ever article and i honestly never thought it would take this much time to write, if you have found this useful, you can follow me on Twitter ([@_pakreht](https://x.com/pakreht_)) where I will notify you about future posts and share some unique tips along the way •ᴗ•
+
+You can also [Buy me a Coffee](https://buymeacoffee.com/pakreht), hehe  •ᴗ•
+
+{{< br >}}
 
 Thanks again for reading ಠ‿<
