@@ -1,6 +1,6 @@
 ---
 draft: false
-title: Setup VSCode for Python
+title: Configure VSCode for Python
 category: houdini
 date: 2024-05-25
 houdini/tags:
